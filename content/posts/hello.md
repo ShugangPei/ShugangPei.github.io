@@ -51,9 +51,7 @@ tags: ["hugo", "blog"]
 
 - 影响范围：当前仅新增文件，未被任何现有模块引用，运行时行为不变。
 
-- 可能风险：若未来接入编译，PowderSpreadingOptimizer.cpp 使用 std::numeric\_limits 但未显式 #include <limits>，可能导致
-
-  编译依赖隐式包含。
+- 可能风险：若未来接入编译，PowderSpreadingOptimizer.cpp 使用 std::numeric\_limits 但未显式 #include <limits>，可能导致编译依赖隐式包含。
 
 
 
