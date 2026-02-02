@@ -1,0 +1,99 @@
+baseURL = "https://ShugangPei.github.io/"
+languageCode = "zh-cn"
+title = "pp 的技术博客"
+theme = "PaperMod"
+enableRobotsTXT = true
+defaultContentLanguage = "zh"
+hasCJKLanguage = true
+
+# 代码高亮（PaperMod 常用）
+pygmentsUseClasses = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON 给 PaperMod 搜索用
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    tabWidth = 4
+
+# 顶部菜单
+[menu]
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "标签"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    name = "搜索"
+    url = "/search/"
+    weight = 3
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 4
+
+[params]
+  env = "production"
+  defaultTheme = "auto"     # auto / light / dark
+  disableThemeToggle = false
+
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowToc = true
+  TocOpen = true
+  ShowWordCount = true
+
+  # 列表页显示摘要（不想显示可改为 false）
+  ShowSummary = true
+
+  # 主页显示文章列表（Profile Mode 默认也会显示）
+  mainSections = ["posts"]
+
+  # PaperMod Profile Mode：首页头像/简介
+  [params.profileMode]
+    enabled = true
+    title = "pp 的技术博客"
+    subtitle = "增材制造 / DPP 软件生态｜切片、标定、闭环控制"
+    imageUrl = "/img/avatar.png"
+    imageTitle = "pp"
+    imageWidth = 160
+    imageHeight = 160
+
+    [[params.profileMode.buttons]]
+      name = "文章"
+      url = "/posts/"
+    [[params.profileMode.buttons]]
+      name = "标签"
+      url = "/tags/"
+    [[params.profileMode.buttons]]
+      name = "关于"
+      url = "/about/"
+
+  # 社交图标（可按需删减/修改）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/你的用户名"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:yourname@example.com"
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+# Taxonomies：标签/分类
+[taxonomies]
+  tag = "tags"
+  category = "categories"
