@@ -26,21 +26,41 @@ pygmentsUseClasses = true
 # 顶部菜单
 [menu]
   [[menu.main]]
+    name = "首页"
+    url = "/"
+    weight = 1
+  [[menu.main]]
     name = "文章"
     url = "/posts/"
-    weight = 1
+    weight = 2
+  [[menu.main]]
+    name = "笔记"
+    url = "/notes/"
+    weight = 3
+  [[menu.main]]
+    name = "项目"
+    url = "/projects/"
+    weight = 4
+  [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 5
+  [[menu.main]]
+    name = "分类"
+    url = "/categories/"
+    weight = 6
   [[menu.main]]
     name = "标签"
     url = "/tags/"
-    weight = 2
+    weight = 7
   [[menu.main]]
     name = "搜索"
     url = "/search/"
-    weight = 3
+    weight = 8
   [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 4
+    weight = 9
 
 [params]
   env = "production"
@@ -59,8 +79,8 @@ pygmentsUseClasses = true
   # 列表页显示摘要（不想显示可改为 false）
   ShowSummary = true
 
-  # 主页显示文章列表（Profile Mode 默认也会显示）
-  mainSections = ["posts"]
+  # 主页聚合展示的主要栏目
+  mainSections = ["posts", "notes", "projects"]
 
   # PaperMod Profile Mode：首页头像/简介
   [params.profileMode]
@@ -76,8 +96,11 @@ pygmentsUseClasses = true
       name = "文章"
       url = "/posts/"
     [[params.profileMode.buttons]]
-      name = "标签"
-      url = "/tags/"
+      name = "笔记"
+      url = "/notes/"
+    [[params.profileMode.buttons]]
+      name = "项目"
+      url = "/projects/"
     [[params.profileMode.buttons]]
       name = "关于"
       url = "/about/"

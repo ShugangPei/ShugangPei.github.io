@@ -3,6 +3,7 @@ title: "我的开源项目一览：DPP 软件生态与工具链"
 date: 2026-02-02T00:00:00+09:00
 draft: false
 tags: ["open-source", "dpp", "slicer", "opencv", "tooling"]
+categories: ["项目总览"]
 ---
 
 这篇文章整理我在个人主页上的主要开源项目：它们围绕自研的 DPP（超声振动干粉 3D 打印）设备，目标是构建一套“从切片到执行、从标定到闭环”的软件生态。
