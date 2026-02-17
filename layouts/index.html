@@ -1,0 +1,70 @@
+{{- define "main" -}}
+
+{{- partial "index_profile.html" . -}}
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
+{{- $pages = where $pages "Params.hiddenInHomeList" "!=" "true" -}}
+{{- $pages = sort $pages "Date" "desc" -}}
+
+<section class="home-latest">
+  <header class="page-header">
+    <h2>最新内容</h2>
+    <div class="post-description">按时间倒序展示最近更新的 8 篇内容。</div>
+  </header>
+
+  {{- range first 8 $pages }}
+  <article class="post-entry">
+    {{- $isHidden := (.Param "cover.hiddenInList") | default (.Param "cover.hidden") | default false }}
+    {{- partial "cover.html" (dict "cxt" . "IsSingle" false "isHidden" $isHidden) }}
+    <header class="entry-header">
+      <h2 class="entry-hint-parent">
+        {{- .Title }}
+        {{- if .Draft }}
+        <span class="entry-hint" title="Draft">Draft</span>
+        {{- end }}
+      </h2>
+    </header>
+    {{- if (ne (.Param "hideSummary") true) }}
+    <div class="entry-content">
+      <p>{{ .Summary | plainify | htmlUnescape }}{{ if .Truncated }}...{{ end }}</p>
+    </div>
+    {{- end }}
+    {{- if not (.Param "hideMeta") }}
+    <footer class="entry-footer">
+      {{- partial "post_meta.html" . -}}
+    </footer>
+    {{- end }}
+    <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+  </article>
+  {{- else }}
+  <div class="home-empty">暂时还没有可展示的内容。</div>
+  {{- end }}
+</section>
+
+<section class="home-quick-links">
+  <header class="page-header">
+    <h2>快速入口</h2>
+    <div class="post-description">快速跳转到聚合页面与检索入口。</div>
+  </header>
+
+  <div class="home-quick-grid">
+    <a class="quick-link-card" href="/archives/">
+      <span class="quick-link-title">归档</span>
+      <span class="quick-link-desc">按时间查看全部文章</span>
+    </a>
+    <a class="quick-link-card" href="/categories/">
+      <span class="quick-link-title">分类</span>
+      <span class="quick-link-desc">按主题聚合阅读</span>
+    </a>
+    <a class="quick-link-card" href="/tags/">
+      <span class="quick-link-title">标签</span>
+      <span class="quick-link-desc">按关键词快速定位</span>
+    </a>
+    <a class="quick-link-card" href="/search/">
+      <span class="quick-link-title">搜索</span>
+      <span class="quick-link-desc">全站关键词检索</span>
+    </a>
+  </div>
+</section>
+
+{{- end -}}

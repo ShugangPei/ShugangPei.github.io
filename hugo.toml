@@ -96,14 +96,11 @@ pygmentsUseClasses = true
       name = "文章"
       url = "/posts/"
     [[params.profileMode.buttons]]
-      name = "笔记"
-      url = "/notes/"
-    [[params.profileMode.buttons]]
       name = "项目"
       url = "/projects/"
     [[params.profileMode.buttons]]
-      name = "关于"
-      url = "/about/"
+      name = "笔记"
+      url = "/notes/"
 
   # 社交图标（可按需删减/修改）
   [[params.socialIcons]]
